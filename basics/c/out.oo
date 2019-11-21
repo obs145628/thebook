@@ -1,0 +1,100 @@
+
+out.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <foo>:
+   0:	55                   	push   %rbp
+   1:	48 89 e5             	mov    %rsp,%rbp
+   4:	5d                   	pop    %rbp
+   5:	c3                   	retq   
+   6:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+   d:	00 00 00 
+
+0000000000000010 <bar>:
+  10:	55                   	push   %rbp
+  11:	48 89 e5             	mov    %rsp,%rbp
+  14:	b8 0a 00 00 00       	mov    $0xa,%eax
+  19:	5d                   	pop    %rbp
+  1a:	c3                   	retq   
+  1b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000000020 <args1>:
+  20:	55                   	push   %rbp
+  21:	48 89 e5             	mov    %rsp,%rbp
+  24:	89 7d fc             	mov    %edi,-0x4(%rbp)
+  27:	5d                   	pop    %rbp
+  28:	c3                   	retq   
+  29:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000000030 <args2>:
+  30:	55                   	push   %rbp
+  31:	48 89 e5             	mov    %rsp,%rbp
+  34:	89 7d fc             	mov    %edi,-0x4(%rbp)
+  37:	89 75 f8             	mov    %esi,-0x8(%rbp)
+  3a:	5d                   	pop    %rbp
+  3b:	c3                   	retq   
+  3c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000000040 <args3>:
+  40:	55                   	push   %rbp
+  41:	48 89 e5             	mov    %rsp,%rbp
+  44:	89 7d fc             	mov    %edi,-0x4(%rbp)
+  47:	89 75 f8             	mov    %esi,-0x8(%rbp)
+  4a:	89 55 f4             	mov    %edx,-0xc(%rbp)
+  4d:	5d                   	pop    %rbp
+  4e:	c3                   	retq   
+  4f:	90                   	nop
+
+0000000000000050 <args4>:
+  50:	55                   	push   %rbp
+  51:	48 89 e5             	mov    %rsp,%rbp
+  54:	89 7d fc             	mov    %edi,-0x4(%rbp)
+  57:	89 75 f8             	mov    %esi,-0x8(%rbp)
+  5a:	89 55 f4             	mov    %edx,-0xc(%rbp)
+  5d:	89 4d f0             	mov    %ecx,-0x10(%rbp)
+  60:	5d                   	pop    %rbp
+  61:	c3                   	retq   
+  62:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+  69:	00 00 00 
+  6c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000000070 <args5>:
+  70:	55                   	push   %rbp
+  71:	48 89 e5             	mov    %rsp,%rbp
+  74:	89 7d fc             	mov    %edi,-0x4(%rbp)
+  77:	89 75 f8             	mov    %esi,-0x8(%rbp)
+  7a:	89 55 f4             	mov    %edx,-0xc(%rbp)
+  7d:	89 4d f0             	mov    %ecx,-0x10(%rbp)
+  80:	44 89 45 ec          	mov    %r8d,-0x14(%rbp)
+  84:	5d                   	pop    %rbp
+  85:	c3                   	retq   
+  86:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+  8d:	00 00 00 
+
+0000000000000090 <args6>:
+  90:	55                   	push   %rbp
+  91:	48 89 e5             	mov    %rsp,%rbp
+  94:	89 7d fc             	mov    %edi,-0x4(%rbp)
+  97:	89 75 f8             	mov    %esi,-0x8(%rbp)
+  9a:	89 55 f4             	mov    %edx,-0xc(%rbp)
+  9d:	89 4d f0             	mov    %ecx,-0x10(%rbp)
+  a0:	44 89 45 ec          	mov    %r8d,-0x14(%rbp)
+  a4:	44 89 4d e8          	mov    %r9d,-0x18(%rbp)
+  a8:	5d                   	pop    %rbp
+  a9:	c3                   	retq   
+  aa:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+00000000000000b0 <args7>:
+  b0:	55                   	push   %rbp
+  b1:	48 89 e5             	mov    %rsp,%rbp
+  b4:	8b 45 10             	mov    0x10(%rbp),%eax
+  b7:	89 7d fc             	mov    %edi,-0x4(%rbp)
+  ba:	89 75 f8             	mov    %esi,-0x8(%rbp)
+  bd:	89 55 f4             	mov    %edx,-0xc(%rbp)
+  c0:	89 4d f0             	mov    %ecx,-0x10(%rbp)
+  c3:	44 89 45 ec          	mov    %r8d,-0x14(%rbp)
+  c7:	44 89 4d e8          	mov    %r9d,-0x18(%rbp)
+  cb:	5d                   	pop    %rbp
+  cc:	c3                   	retq   
