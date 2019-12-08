@@ -1,0 +1,17 @@
+
+Using gdb to debug assembly instructions:
+
+- You can compile a .S file with -g flag, and use gdb like for a normal C file
+
+- For file compiled without debug insrtructions, or to debug the actual real instructions, you can go the ASM mode:
+(gdb) layout asm
+
+- To go the next instruction, next won't work, use this command
+(gdb) stepi
+
+-  You can display all registers:
+(gdb) info registers
+Or only a few:
+(gdb) info registers rax rbx
+
+- Display memory: more infos at https://sourceware.org/gdb/current/onlinedocs/gdb/Memory.html
